@@ -40,7 +40,7 @@ class Verbal(object):
 
     def __repr__(self):
 
-        return "<num2word.verbal_num@%d>" %(num)
+        return "<num2word.verbal_num@%d>" %(self.num)
 
     def _get_list_(self, num):
         """Returns a list of one digit numbers."""
