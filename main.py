@@ -38,6 +38,14 @@ class Verbal(object):
 
         self.list = [self.data_ones, self.data_tens, self.data_hundreds, self.data_thousands, self.data_millions, self.data_billions, self.data_trillions]
 
+    def __add__(self, num2):
+
+        if type(num2) in [int, long]:
+
+            self.num += num2
+
+            return self.get_num()
+        
     def __repr__(self):
 
         return "<num2word.verbal_num@%d>" %(self.num)
@@ -64,7 +72,7 @@ class Verbal(object):
 
     def get_num(self):
 
-        return self._get_num_(num)
+        return self._get_num_(self.num)
 
     def _get_num_(self, num):
 
@@ -130,5 +138,5 @@ if __name__ == "__main__":
 
     num = input("Enter Number : ")
     
-    verbnum = verbal_num(num)
+    verbnum = Verbal(num)
     print a.get_num()
