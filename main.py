@@ -42,9 +42,7 @@ class Verbal(object):
 
         if type(num2) in [int, long]:
 
-            self.num += num2
-
-            return self.get_num()
+            return self._get_num_(self.num1 + num2)
         
     def __repr__(self):
 
