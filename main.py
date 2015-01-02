@@ -42,25 +42,25 @@ class Verbal(object):
 
         if type(num2) in [int, long]:
 
-            return self._get_num_(self.num1 + num2)
+            return self._get_num_(self.num + num2)
 
     def __sub__(self, num2):
 
         if type(num2) in [int, long]:
 
-            return self._get_num_(self.num1 - num2)
+            return self._get_num_(self.num - num2)
 
     def __mul__(self, num2):
 
         if type(num2) in [int, long]:
 
-            return self._get_num_(self.num1 * num2)
+            return self._get_num_(self.num * num2)
 
     def __div__(self, num2):
 
         if type(num2) in [int, long]:
 
-            return self._get_num_(self.num1 // num2)
+            return self._get_num_(self.num // num2)
         
     def __repr__(self):
 
