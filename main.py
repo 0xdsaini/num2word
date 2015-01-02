@@ -126,7 +126,9 @@ class verbal_num(object):
 
             return verbnum
 
-num = input("Enter Number : ")
-a = verbal_num(num)
+if __name__ == "__main__":
 
-print a.get_num()
+    num = input("Enter Number : ")
+    
+    verbnum = verbal_num(num)
+    print a.get_num()
