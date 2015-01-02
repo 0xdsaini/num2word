@@ -19,7 +19,7 @@
 
 """Integers to Verbal numbers converter i.e. 100 to 'One Hundred'"""
 
-class verbal_num(object):
+class Verbal(object):
 
     def __init__(self, num):
 
