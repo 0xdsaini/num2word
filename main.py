@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright (C) 2014 Devesh Saini(futuredevesh@gmail.com).
+# Copyright (C) 2015 Devesh Saini(futuredevesh@gmail.com).
 #
 # This file is part of num2word.
 #
