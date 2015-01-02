@@ -38,6 +38,10 @@ class verbal_num(object):
 
         self.list = [self.data_ones, self.data_tens, self.data_hundreds, self.data_thousands, self.data_millions, self.data_billions, self.data_trillions]
 
+    def __repr__(self):
+
+        return "<num2word.verbal_num@%d>" %(num)
+
     def _get_list_(self, num):
         """Returns a list of one digit numbers."""
 
