@@ -155,4 +155,4 @@ if __name__ == "__main__":
     num = input("Enter Number : ")
     
     verbnum = Verbal(num)
-    print a.get_num()
+    print num.get_num()
