@@ -14,13 +14,26 @@ class verbal_num(object):
         self.data_hundreds = "Hundred"
         self.data_thousands = "Thousand"
         self.data_millions = "Million"
+        self.data_billions = "Billion"
+        self.data_trillions = "Trillion"
 
-        self.list = [self.data_ones, self.data_tens, self.data_hundreds, self.data_thousands, self.data_millions]
+        self.list = [self.data_ones, self.data_tens, self.data_hundreds, self.data_thousands, self.data_millions, self.data_billions, self.data_trillions]
 
     def _get_list_(self, num):
         """Returns a list of one digit numbers."""
 
         return [x for x in str(num)]
+
+    def get_range(self, str_len):
+
+        actual_len = str_len - 1
+
+        no_div3 = actual_len // 3 #Floor division for getting only integeral part of division.
+
+        min_range = no_div3 * 3
+        max_range = min_range + 3
+
+        return (min_range, max_range)
 
     def joinlist(self, a_list, typefunc):
 
@@ -38,11 +51,11 @@ class verbal_num(object):
 
             return self.list[0][str_num]
 
-        if 10 <= num < 20:
+        elif 10 <= num < 20:
 
             return self.list[1][str_num]
 
-        if 20 <= num < 100:
+        elif 20 <= num < 100:
 
             verbnum = ""
 
@@ -56,7 +69,7 @@ class verbal_num(object):
 
             return verbnum
 
-        if 100 <= num < 1000:
+        elif 100 <= num < 1000:
 
             verbnum = ""
 
@@ -70,31 +83,23 @@ class verbal_num(object):
 
             return verbnum
 
-        if 1000 <= num < 1000000:
+        else:
 
             verbnum = ""
 
             num_list = self._get_list_(str_num)
 
-            thousands = self._get_num_( self.joinlist(num_list[:-3], int) ) + " " + self.list[3]
+            zeroes_range = self.get_range(len(str_num)) #Getting new ranges in which no. of zeroes lies.
 
-            rest = self._get_num_( self.joinlist(num_list[-3:], int))
+            slice_no = min(zeroes_range) * -1
 
-            verbnum = thousands + " " + rest
+            list_index = min(zeroes_range) / 3 + 2 #Gives an index of what to get from self.list i.e. thousand, million, billion etc.
 
-            return verbnum
+            pre = self._get_num_( self.joinlist(num_list[:slice_no], int) ) + " " + self.list[list_index]
 
-        if 1000000 <= num < 100000000:
+            post = self._get_num_( self.joinlist(num_list[slice_no:], int))
 
-            verbnum = ""
-
-            num_list = self._get_list_(str_num)
-
-            millions = self._get_num_( self.joinlist(num_list[:-6], int) ) + " " + self.list[4]
-
-            rest = self._get_num_( self.joinlist(num_list[-6:], int))
-
-            verbnum = millions + " " + rest
+            verbnum = pre + " " + post
 
             return verbnum
 
