@@ -1,4 +1,4 @@
 num2word
 ========
 
-Converts integers to verbal numbers i.e. 100 to "One Hundred".
+1. Converts numbers to words i.e. 100 to "One Hundred".
