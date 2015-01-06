@@ -19,6 +19,22 @@
 
 """Integers to Verbal numbers converter i.e. 100 to 'One Hundred'"""
 
+from sys import argv
+
+def arg_verify(arg_list):
+
+    if len(arg_list) > 1:
+        return 2 # Arguments are more than 2.
+
+    elif len(arg_list) == 1:
+
+        try:
+            num = int(arg_list[0])
+            return num
+
+        except ValueError:
+            return 3 # Number argument is not number
+
 def remove_espace(a_str):
 
     splitted_list = a_str.split()
@@ -172,6 +188,19 @@ class Verbal(object):
 
 if __name__ == "__main__":
 
-    num = input("Enter Number : ")
-    
+    if len(argv) == 1:
+
+        num = input("Enter Number : ")
+
+    if len(argv) > 1:
+
+        if arg_verify(argv[1:]) == 2:
+            print "Arguments are more than 1."
+
+        elif arg_verify(argv[1:]) == 3:
+            print "Invalid argument. Please enter only integer number(s)."
+
+        else:
+            num = arg_verify(argv[1:])
+
     print num2word(num)
