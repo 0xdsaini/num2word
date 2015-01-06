@@ -19,6 +19,16 @@
 
 """Integers to Verbal numbers converter i.e. 100 to 'One Hundred'"""
 
+def num2word(num):
+
+    Verbal_obj = Verbal(num)
+
+    verbal_num = Verbal_obj.get_num()
+
+    del Verbal_obj
+
+    return verbal_num
+
 class Verbal(object):
 
     def __init__(self, num):
