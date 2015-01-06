@@ -19,11 +19,20 @@
 
 """Integers to Verbal numbers converter i.e. 100 to 'One Hundred'"""
 
+def remove_espace(a_str):
+
+    splitted_list = a_str.split()
+    join_list = " ".join(splitted_list)
+
+    return join_list
+
 def num2word(num):
 
     Verbal_obj = Verbal(num)
 
     verbal_num = Verbal_obj.get_num()
+
+    verbal_num = remove_espace(verbal_num)
 
     del Verbal_obj
 
