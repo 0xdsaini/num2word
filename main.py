@@ -40,6 +40,7 @@ class Verbal(object):
 
         self.data_ones = {"0":"", "1":"One", "2":"Two", "3":"Three", "4":"Four", "5":"Five", "6":"Six", "7":"Seven", "8":"Eight", "9":"Nine"}
         self.data_tens = {"10":"Ten", "11":"Eleven", "12":"Twelve", "13":"Thirteen", "14":"Fourteen", "15":"Fifteen", "16":"Sixteen", "17":"Seventeen", "18":"Eighteen", "19":"Nineteen", "2":"Twenty", "3":"Thirty", "4":"Fourty", "5":"Fifty", "6":"Sixty", "7":"Seventy", "8":"Eighty", "9":"Ninety"}
+
         self.data_hundreds = "Hundred"
         self.data_thousands = "Thousand"
         self.data_millions = "Million"
@@ -74,7 +75,7 @@ class Verbal(object):
         
     def __repr__(self):
 
-        return "<num2word.verbal_num@%d>" %(self.num)
+        return "<num2word.Verbal>"
 
     def _get_list_(self, num):
         """Returns a list of one digit numbers from a string."""
