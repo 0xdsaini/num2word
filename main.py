@@ -164,5 +164,4 @@ if __name__ == "__main__":
 
     num = input("Enter Number : ")
     
-    verbnum = Verbal(num)
-    print verbnum.get_num()
+    print num2word(num)
