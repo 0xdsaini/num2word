@@ -109,7 +109,7 @@ class Verbal(object):
 
     def get_range(self, str_len):
 
-        actual_len = str_len - 1
+        actual_len = str_len - 1 #number of maximum possible zeroes.
 
         no_div3 = actual_len // 3 #Floor division for getting only integeral part of division.
 
