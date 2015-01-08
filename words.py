@@ -21,17 +21,17 @@ data_first_ones = ['', 'Bi', 'Tri', 'Quadri', 'Quinti', 'Sexti', 'Septi', 'Octi'
 
 ones_suffix = "llion" #Suffix for one's numbers.
 
-data_ones = {'0': '', '1':'un', '2':'duo', '3':'tre', '4':'quattuor', '5':'quin', '6':'sex', '7':'septen', '8':'octo', '9':'novem'}
+data_ones = {'0': '', '1':'Un', '2':'Duo', '3':'Tre', '4':'Quattuor', '5':'Quin', '6':'Sex', '7':'Septen', '8':'Octo', '9':'Novem'}
 
-data_tens = {"0":"", "1":'dec', "2":'vigin', "3":'trigin', "4":'quadragin', "5":'quinquagin', "6":'sexagin', "7":'septuagin', "8":'octogin', "9":'nonagin'}
+data_tens = {"0":"", "1":'Dec', "2":'Vigin', "3":'Trigin', "4":'Quadragin', "5":'Quinquagin', "6":'Sexagin', "7":'Septuagin', "8":'Octogin', "9":'Nonagin'}
 
 tens_suffix = "illion" #Suffix for ten's numbers.
 
-data_hundreds = {"0":"", "1":'cen', "2":'duocen', "3":'trecen', "4":'quadringen', "5":'quingen', "6":'sescen', "7":'septingen', "8":'octingen', "9":'nongen'}
+data_hundreds = {"0":"", "1":'Cen', "2":'Duocen', "3":'Trecen', "4":'Quadringen', "5":'Quingen', "6":'Sescen', "7":'Septingen', "8":'Octingen', "9":'Nongen'}
 
 hundreds_suffix = "tillion" #Suffix for hundred's names.
 
-data_thousands = 'millia'
+data_thousands = 'Millia'
 
 thounsands_suffix = "tillion" #Suffix for thousand's names.
 
