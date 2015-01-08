@@ -91,7 +91,9 @@ def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
         elif not main:
             suffix = ""
 
-        return combine([ones, tens, suffix], '-')
+        tens_plus_suffix = combine([tens, suffix], '') #Between tens and suffix, there is NO SEPERATOR.
+
+        return combine([ones, tens_plus_suffix], '-') #Between ones and tens_plus_suffix variable, there is dash(-) SEPERATOR.
 
     elif 100 <= pre_card < 1000:
 
