@@ -21,6 +21,8 @@
 
 from sys import argv
 
+from words import words
+
 def arg_verify(arg_list):
 
     if len(arg_list) > 1:
@@ -72,7 +74,12 @@ class Verbal(object):
         self.data_billions = "Billion"
         self.data_trillions = "Trillion"
 
-        self.list = [self.data_ones, self.data_tens, self.data_hundreds, self.data_thousands, self.data_millions, self.data_billions, self.data_trillions]
+        self.list = [self.data_ones, self.data_tens, self.data_hundreds, self.data_thousands, self.data_millions]
+
+        latin_range = map(lambda x: x/3, self.get_range(len(self.str_num)))
+        latin_min = latin_range[0]
+
+        self.list.extend( words(latin_min) )
 
     def __add__(self, num2):
 
