@@ -39,7 +39,13 @@ def combine(arg_list, sep): #"arg_list" is a list and "sep" is a seperator strin
 
 	"""Combines strings from a list with same order with 'seperator' between elements"""
 
-	return sep.join(arg_list)
+	no_empty = [] #no_empty is an filtered list of arg_list with having no empty strings.
+
+	for i in arg_list:
+		if not i == "":
+			no_empty.append(i)
+
+	return sep.join(no_empty)
 
 def words(pre_card, main=True):
 
