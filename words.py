@@ -59,7 +59,7 @@ def words(pre_card, main=True):
 
 def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
 
-    "Gives words. 'type' are 'pt', 'pre_card' means for powers of ten and prefix cardinal numbers."
+    "Gives words. 'type' are 'pt', 'pre_card' means for powers of ten and prefix cardinal numbers respectively."
 
     str_precard = str(pre_card)
 
