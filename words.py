@@ -33,19 +33,19 @@ hundreds_suffix = "tillion" #Suffix for hundred's names.
 
 data_thousands = 'Millia'
 
-thounsands_suffix = "tillion" #Suffix for thousand's names.
+thousands_suffix = "tillion" #Suffix for thousand's names.
 
 def combine(arg_list, sep): #"arg_list" is a list and "sep" is a seperator string.
 
-	"""Combines strings from a list with same order with 'seperator' between elements"""
+    """Combines strings from a list with same order with 'seperator' between elements"""
 
-	no_empty = [] #no_empty is an filtered list of arg_list with having no empty strings.
+    no_empty = [] #no_empty is an filtered list of arg_list with having no empty strings.
 
-	for i in arg_list:
-		if not i == "":
-			no_empty.append(i)
+    for i in arg_list:
+        if not i == "":
+            no_empty.append(i)
 
-	return sep.join(no_empty)
+    return sep.join(no_empty)
 
 def words(pre_card, main=True):
 
