@@ -17,6 +17,8 @@
 #     You should have received a copy of the GNU General Public License
 #     along with num2word.  If not, see <http://www.gnu.org/licenses/>.
 
+from sys import argv
+
 data_first_ones = ['', 'Bi', 'Tri', 'Quadri', 'Quinti', 'Sexti', 'Septi', 'Octi', 'Noni'] #Two first are empty, one for zero and one for one.
 
 ones_suffix = "llion" #Suffix for one's numbers.
@@ -115,4 +117,10 @@ def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
 
 if __name__ == "__main__":
 
-    print words(input("Enter Prefix Cardinal Number : "))
+    if argv[1:]:
+        pre_card = int(argv[1])
+
+    else:
+        pre_card = input("Enter Prefix Cardinal Number : ")
+
+    print words(pre_card)
