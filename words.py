@@ -51,6 +51,10 @@ def combine(arg_list, sep): #"arg_list" is a list and "sep" is a seperator strin
 
 def words(pre_card, main=True):
 
+    """Words equivalent to range function. for example, if pre_card=5 is given
+    then it will return a list of all words from latin powers 3 to 5 inclusively
+    i.e. ['Billion', 'Trillion', 'Quadrillion']"""
+
     wordslist = []
 
     for i in range(3, pre_card+1):
