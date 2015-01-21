@@ -111,7 +111,9 @@ def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
         else:
             suffix = hundreds_suffix
 
-        return combine([hundreds, rest, suffix], '-')
+        hundreds_rest = combine([hundreds, rest], '-')
+
+        return combine([hundreds_rest, suffix], '')
 
     else: pass
 
