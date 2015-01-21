@@ -89,12 +89,12 @@ if len(argv) > 1:
         print HELP
         exit(0)
 
-    elif arg_verify(argv[1:]) == 2:
+    elif arg_verify(argv[1:]) == 3:
 
         print "Too many arguments."
         exit(3)
 
-    elif arg_verify(argv[1:]) == 3:
+    elif arg_verify(argv[1:]) == 4:
 
         print "Invalid argument. Only integer number is allowed."
         exit(4)
