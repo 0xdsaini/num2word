@@ -124,7 +124,37 @@ def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
 
         return combine([hundreds_rest, suffix], '')
 
-    else: pass
+    elif 1000 <= pre_card < 1000000:
+
+        thousands_num = int(str_precard[:-3]) #Recursively call itself to get the number of thousands in words.
+
+        #BEGINS : For computing number of thousands and data_thousands management.
+        if thousands_num > 1:
+            thousands = combine([_words_(thousands_num, False), data_thousands], '-')
+
+        else:
+            thousands = data_thousands
+        #ENDS : For computing number of thousands and data_thousands management.
+
+        #BEGINS : For choosing the right suffix.
+        if main:
+            if 10 <= int(str_precard[-2:]) < 20: #In case of illion suffix if tens numbers are (10 <= x < 20), illion suffix would be used.
+                suffix = tens_suffix
+
+            else:
+                suffix = thousands_suffix
+
+        else:
+            suffix = ""
+        #ENDS : For choosing the right suffix.
+
+        remain_num = int(str_precard[-3:])
+
+        rest = _words_(remain_num, False) #Rest words, recursively computing using the remaining number
+
+        rest_plus_suffix = combine([rest, suffix], '')
+
+        return combine([thousands, rest_plus_suffix], '-')
 
 if __name__ == "__main__":
 
