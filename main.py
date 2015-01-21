@@ -56,7 +56,7 @@ def contains(compare_list, allowed_elements, strategy='or'):
         else:
             return False
 
-    elif strategy=='or': #Return True as soon as one element from 
+    elif strategy=='or': #Return True as soon as any element from compare_list is in the allowed_elements.
 
         for element in compare_list:
 
