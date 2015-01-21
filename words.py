@@ -103,7 +103,7 @@ def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
 
     elif 100 <= pre_card < 1000:
 
-        hundreds = data_hundreds[str_precard[0]]
+        hundreds = data_hundreds[str_precard[0]] #Number of hundreds i.e. Cen, Duocen and so on...
 
         remain_num = int(str_precard[1:])
 
