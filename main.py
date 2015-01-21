@@ -96,7 +96,7 @@ if len(argv) > 1:
 
     elif arg_verify(argv[1:]) == 4:
 
-        print "Invalid argument. Only integer number is allowed."
+        print "Invalid Argument, only decimal number is allowed."
         exit(4)
 
     else:
