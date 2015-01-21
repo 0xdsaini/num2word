@@ -103,7 +103,7 @@ def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
 
         remain_num = int(str_precard[1:])
 
-        rest = _words_(remain_num, False) #Calling itself i.e. recursive, So, False
+        rest = _words_(remain_num, False) #giving True will result in output with suffix, so False.
 
         if int(remain_num) >= 10:
             suffix = tens_suffix
