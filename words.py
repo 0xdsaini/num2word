@@ -109,13 +109,18 @@ def _words_(pre_card, main=True): #pre_card stands for prefix cardial.
 
         rest = _words_(remain_num, False) #giving True will result in output with suffix, so False.
 
-        if int(remain_num) >= 10:
-            suffix = tens_suffix
+        hundreds_rest = combine([hundreds, rest], '-')
+
+        if main:
+
+            if 10 <= int(remain_num) < 20:
+                suffix = tens_suffix
+
+            else:
+                suffix = hundreds_suffix
 
         else:
-            suffix = hundreds_suffix
-
-        hundreds_rest = combine([hundreds, rest], '-')
+            suffix = ""
 
         return combine([hundreds_rest, suffix], '')
 
