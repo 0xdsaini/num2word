@@ -104,7 +104,7 @@ class Verbal(object):
 
         return typefunc("".join(a_list))
 
-    def get_num(self):
+    def get_word(self):
 
         word_num = self._get_num_(self.num)
 
