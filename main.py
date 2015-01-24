@@ -69,7 +69,7 @@ def num2word(num):
 
     Verbal_obj = Verbal(num)
 
-    verbal_num = Verbal_obj.get_num()
+    verbal_num = Verbal_obj.get_word()
 
     del Verbal_obj
 
