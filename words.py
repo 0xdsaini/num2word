@@ -57,7 +57,7 @@ def words(pre_card, main=True):
 
     wordslist = []
 
-    for i in range(3, pre_card+1):
+    for i in range(2, pre_card+1):
 
         wordslist.append(_words_(i))
 
