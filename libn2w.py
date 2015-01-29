@@ -24,11 +24,29 @@ division on the go.
 
 from words import words
 
+def separate(word_num, output_sep):
+
+    if output_sep == 'csv':
+        return word_num
+
+    if output_sep == 'lsv':
+        return "\n".join( word_num.split(", ") ) #Joining with newline separation.
+
+    elif output_sep == 'lscev':
+        return ",\n".join( word_num.split(", ") ) #Joining with newline separation.
+
 class Verbal(object):
 
-    def __init__(self, num):
+    def __init__(self, num, output_sep='csv'):
 
         self.num = num
+
+        #Output types are "csv", "lsv" and "clsv".
+        #csv = Comma Separated Values.
+        #lsv = Line Separated Values.
+        #lscev = Line separated, comma ended value.
+        self.output_sep = output_sep #Output_sep stands for Output data separator.
+
         self.str_num = str(num)
 
         self.numlist = [x for x in str(num)]
@@ -105,7 +123,7 @@ class Verbal(object):
 
         word_num = " ".join(word_list)
 
-        return word_num
+        return separate(word_num, self.output_sep)
 
     def _get_num_(self, num):
 
