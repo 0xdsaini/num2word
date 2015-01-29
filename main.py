@@ -113,3 +113,7 @@ elif contains(argv[1:], ['-l', '--lsv']):
 elif contains(argv[1:], ['-lc', '--lscev']):
 
     print num2word(num, 'lscev')
+
+else:
+	print num2word(num)
+	
