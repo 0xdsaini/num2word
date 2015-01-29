@@ -39,8 +39,6 @@ class Verbal(object):
         self.data_hundreds = "Hundred"
         self.data_thousands = "Thousand"
         self.data_millions = "Million"
-        self.data_billions = "Billion"
-        self.data_trillions = "Trillion"
 
         self.list = [self.data_ones, self.data_tens, self.data_hundreds, self.data_thousands, self.data_millions]
 
