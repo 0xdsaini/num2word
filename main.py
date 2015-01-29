@@ -115,5 +115,5 @@ elif contains(argv[1:], ['-lc', '--lscev']):
     print num2word(num, 'lscev')
 
 else:
-	print num2word(num)
+	print num2word(num, 'csv')
 	
