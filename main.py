@@ -35,10 +35,10 @@ Print the value of NUMBER in English words to standard output."""
 
 def arg_verify(arg_list):
 
-    if len(arg_list) > 1:
+    if len(arg_list) > 2:
         return 3 # Arguments are more than 2.
 
-    elif len(arg_list) == 1:
+    elif len(arg_list) <= 2:
 
         try:
             num = int(arg_list[0])
@@ -65,9 +65,9 @@ def contains(compare_list, allowed_elements, strategy='or'):
 
         return False
 
-def num2word(num):
+def num2word(num, output_sep):
 
-    Verbal_obj = Verbal(num)
+    Verbal_obj = Verbal(num, output_sep)
 
     verbal_num = Verbal_obj.get_word()
 
@@ -102,5 +102,14 @@ if len(argv) > 1:
     else:
         num = arg_verify(argv[1:])
 
-print num2word(num)
+if contains(argv[1:], ['-c', '--csv']):
 
+    print num2word(num, 'csv')
+
+elif contains(argv[1:], ['-l', '--lsv']):
+
+    print num2word(num, 'lsv')
+
+elif contains(argv[1:], ['-lc', '--lscev']):
+
+    print num2word(num, 'lscev')
