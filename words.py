@@ -59,7 +59,7 @@ def words(pre_card, main=True):
 
     for i in range(2, pre_card+1):
 
-        wordslist.append(_words_(i))
+        wordslist.append(_words_(i) + ",")
 
     return wordslist
 
