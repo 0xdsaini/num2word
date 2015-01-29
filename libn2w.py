@@ -18,7 +18,7 @@
 #     along with num2word.  If not, see <http://www.gnu.org/licenses/>.
 
 """A library to convert number into English words and perform basic
-arithmatic operations i.e. addition, subtraction, multiplication and
+arithmetic operations i.e. addition, subtraction, multiplication and
 division on the go.
 """
 
