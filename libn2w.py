@@ -24,13 +24,6 @@ division on the go.
 
 from words import words
 
-def remove_espace(a_str):
-
-    splitted_list = a_str.split()
-    join_list = " ".join(splitted_list)
-
-    return join_list
-
 class Verbal(object):
 
     def __init__(self, num):
@@ -106,9 +99,15 @@ class Verbal(object):
 
     def get_word(self):
 
-        word_num = self._get_num_(self.num)
+        word_list = self._get_num_(self.num)
 
-        return remove_espace(word_num)
+        for i in range( word_list.count("") ):
+
+            word_list.remove("")
+
+        word_num = " ".join(word_list)
+
+        return word_num
 
     def _get_num_(self, num):
 
@@ -116,15 +115,15 @@ class Verbal(object):
 
         if 0 <= num < 10:
 
-            return self.list[0][str_num]
+            return [ self.list[0][str_num] ]
 
         elif 10 <= num < 20:
 
-            return self.list[1][str_num]
+            return [ self.list[1][str_num] ]
 
         elif 20 <= num < 100:
 
-            verbnum = ""
+            verblist = []
 
             num_list = self._get_list_(str_num)
 
@@ -132,27 +131,28 @@ class Verbal(object):
 
             ones = self.list[0][num_list[1]]
 
-            verbnum = tens + " " + ones
+            verblist.extend([tens, ones])
 
-            return verbnum
+            return verblist
 
         elif 100 <= num < 1000:
 
-            verbnum = ""
+            verblist = []
 
             num_list = self._get_list_(str_num)
 
-            hundreds = self._get_num_( int(num_list[0]) ) + " " + self.list[2]
+            hundreds = self._get_num_( int(num_list[0]) ) + [ self.list[2] ] #Adding two lists.
 
             rest = self._get_num_( self.joinlist(num_list[1:], int) )
 
-            verbnum = hundreds + " " + rest
+            verblist.extend(hundreds)
+            verblist.extend(rest)
 
-            return verbnum
+            return verblist
 
         else: #Conversion from 1000 to infinity is done here.
 
-            verbnum = ""
+            verblist = []
 
             num_list = self._get_list_(str_num)
 
@@ -162,10 +162,11 @@ class Verbal(object):
 
             list_index = min(zeroes_range) / 3 + 2 #Gives an index of what to get from self.list i.e. thousand, million, billion etc.
 
-            pre = self._get_num_( self.joinlist(num_list[:slice_no], int) ) + " " + self.list[list_index]
+            pre = self._get_num_( self.joinlist(num_list[:slice_no], int) ) + [ self.list[list_index] ] #Adding two lists.
 
             post = self._get_num_( self.joinlist(num_list[slice_no:], int))
 
-            verbnum = pre + " " + post
+            verblist.extend(pre)
+            verblist.extend(post)
 
-            return verbnum
+            return verblist
