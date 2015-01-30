@@ -41,7 +41,7 @@ def arg_verify(arg_list):
     elif len(arg_list) <= 2:
 
         try:
-            num = int(arg_list[0])
+            num = int(arg_list[-1])
             return num
 
         except ValueError:
