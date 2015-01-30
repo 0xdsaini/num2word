@@ -110,7 +110,10 @@ elif contains(argv[1:], ['-l', '--lsv']):
 
     print num2word(num, 'lsv')
 
-elif contains(argv[1:], ['-lc', '--lscev']):
+elif contains(argv[1:], ['-lc', '-cl', '--lscev', '--celsv']):
+	#lscev or lc stands for line separated, comma ended values.
+	#celsv or cl stands for comma ended, line separated values.
+	#And both are same things i.e. identical options.
 
     print num2word(num, 'lscev')
 
