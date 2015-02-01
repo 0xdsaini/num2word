@@ -23,17 +23,7 @@ division on the go.
 """
 
 from words import words
-
-def separate(word_num, output_sep):
-
-    if output_sep == 'csv':
-        return word_num
-
-    if output_sep == 'lsv':
-        return "\n".join( word_num.split(", ") ) #Joining with newline separation.
-
-    elif output_sep == 'lscev':
-        return ",\n".join( word_num.split(", ") ) #Joining with newline separation.
+from separate import separate
 
 class Verbal(object):
 
